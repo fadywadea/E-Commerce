@@ -1,40 +1,50 @@
 import React from 'react'
 // import Style from './Register.module.css'
 import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 export default function Register() {
   function registerSubmit(values) {
     console.log(values);
   }
 
-  function validate(values) {
-    let errors = {};
-    let phoneRegex = /^(011|012|015)[0-9]{8}$/;
-    let emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  // function validate(values) {
+  //   let errors = {};
+  //   let phoneRegex = /^(011|012|015)[0-9]{8}$/;
+  //   let emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-    if (!values.name) {
-      errors.name = "name is required";
-    } else if (values.name.length < 3) {
-      errors.name = "name minlength is 3";
-    } else if (values.name.length > 10) {
-      errors.name = "name maxlength is 10";
-    }
+  //   if (!values.name) {
+  //     errors.name = "name is required";
+  //   } else if (values.name.length < 3) {
+  //     errors.name = "name minlength is 3";
+  //   } else if (values.name.length > 10) {
+  //     errors.name = "name maxlength is 10";
+  //   }
 
-    if (!values.phone) {
-      errors.phone = "phone is required"
-    } else if (!phoneRegex.test(values.phone)) {
-      errors.phone = "phone number is invalid";
-    }
+  //   if (!values.phone) {
+  //     errors.phone = "phone is required"
+  //   } else if (!phoneRegex.test(values.phone)) {
+  //     errors.phone = "phone number is invalid";
+  //   }
 
-    if (!values.email) {
-      errors.email = "email is required";
-    } else if (!emailRegex.test(values.email)) {
-      errors.email = "email number is invalid";
-    }
+  //   if (!values.email) {
+  //     errors.email = "email is required";
+  //   } else if (!emailRegex.test(values.email)) {
+  //     errors.email = "email number is invalid";
+  //   }
 
-    return errors;
-  }
+  //   return errors;
+  // }
 
+  let phoneRegExp = /^(011|012|015)[0-9]{8}$/;
+
+  let validateScheme = Yup.object({
+    name: Yup.string().min(3, "name minlength is 3").max(10, "name maxlength is 10").required("name is required"),
+    email: Yup.string().email("email is invalid").required("email is required"),
+    phone: Yup.string().matches(phoneRegExp, "Phone number is not valid").required("phone is required"),
+    password: Yup.string().matches(/^[a-zA-Z]\w{5,8}$/, "must be <br> * Start with a letter (either uppercase or lowercase). * Be between 6 and 9 characters in total. * Can only contain letters (A-Z or a-z) and numbers (0-9)").required("password is required"),
+    rePassword: Yup.string().oneOf([Yup.ref("password")], "re-Password pattern is invalid").required("rePassword is required")
+  })
 
   let formik = useFormik({
     initialValues: {
@@ -44,13 +54,12 @@ export default function Register() {
       password: '',
       rePassword: ''
     },
-    validate
-    ,
+    validationSchema: validateScheme,
     onSubmit: registerSubmit
   })
   return <>
     <div className="w-75 mx-auto py-5">
-      <h3>Register Now</h3>
+      <h2>Register Now</h2>
       <form onSubmit={formik.handleSubmit}>
 
         <label htmlFor='name'>Name:</label>
@@ -67,11 +76,14 @@ export default function Register() {
 
         <label htmlFor='password'>Password:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} className='form-control mb-2' id='password' name='password' type="password" />
+        {formik.errors.password && formik.touched.password ? <div className="alert alert-danger mt-2 p-2">{formik.errors.password}</div> : ""}
 
         <label htmlFor='rePassword'>rePassword:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.rePassword} className='form-control mb-2' id='rePassword' name='rePassword' type="password" />
-
-        <button type='submit' className='btn bg-main text-white mt-2'>Register</button>
+        {formik.errors.rePassword && formik.touched.rePassword ? <div className="alert alert-danger mt-2 p-2">{formik.errors.rePassword}</div> : ""}
+        <div className='d-flex'>
+          <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn btn-lg mt-2 ms-auto' : 'btn btn-lg bg-main text-white mt-2 ms-auto'} type='submit'>Register Now</button>
+        </div>
       </form>
     </div>
   </>
