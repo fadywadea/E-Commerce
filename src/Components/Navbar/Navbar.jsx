@@ -1,13 +1,20 @@
 import React, { useContext } from 'react'
 // import Style from './Navbar.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../Assets/images/freshcart-logo.svg'
 import { CounterContext } from '../../Context/CounterContext'
 import { userContext } from '../../Context/UserContext';
 
 export default function Navbar() {
   let { counter } = useContext(CounterContext);
-  let { userToken } = useContext(userContext)
+  let { userToken, setUserToken } = useContext(userContext);
+  let navigate = useNavigate();
+
+  function logOut() {
+    localStorage.setItem('userToken', null);
+    setUserToken(null);
+    navigate('/login');
+  }
 
   return <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -48,7 +55,7 @@ export default function Navbar() {
               <i className='fab fa-youtube mx-2'></i>
             </li>
             {userToken !== null ? <li className="nav-item">
-              <Link className="nav-link">Logout</Link>
+              <span onClick={() => logOut()} className="nav-link cursor-pointer">Logout</span>
             </li> : <>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">Login</Link>
