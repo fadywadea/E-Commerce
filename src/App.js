@@ -10,6 +10,9 @@ import Cart from './Components/Cart/Cart';
 import Notfound from './Components/Notfound/Notfound';
 import Categories from './Components/Categories/Categories';
 import Brands from './Components/Brands/Brands';
+import CounterContextProvider from './Context/CounterContext';
+
+
 
 let routers = createBrowserRouter([
   {
@@ -27,9 +30,9 @@ let routers = createBrowserRouter([
 ]);
 
 function App() {
-  return <>
+  return <CounterContextProvider>
     <RouterProvider router={routers}></RouterProvider>
-  </>
+  </CounterContextProvider>
 }
 
 export default App;
