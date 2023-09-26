@@ -11,6 +11,8 @@ import Notfound from './Components/Notfound/Notfound';
 import Categories from './Components/Categories/Categories';
 import Brands from './Components/Brands/Brands';
 import CounterContextProvider from './Context/CounterContext';
+import { useContext, useEffect } from 'react';
+import { userContext } from './Context/UserContext';
 
 
 
@@ -30,6 +32,14 @@ let routers = createBrowserRouter([
 ]);
 
 function App() {
+  let { setUserToken } = useContext(userContext);
+
+  useEffect(() => {
+    if (localStorage.getItem('userToken') !== null) {
+      setUserToken(localStorage.getItem('userToken'))
+    }
+  })
+
   return <CounterContextProvider>
     <RouterProvider router={routers}></RouterProvider>
   </CounterContextProvider>
