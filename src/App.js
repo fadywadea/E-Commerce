@@ -13,19 +13,20 @@ import Brands from './Components/Brands/Brands';
 import CounterContextProvider from './Context/CounterContext';
 import { useContext, useEffect } from 'react';
 import { userContext } from './Context/UserContext';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 
 
 let routers = createBrowserRouter([
   {
     path: '/', element: <Layout />, children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
-      { path: 'products', element: <Products /> },
-      { path: 'categories', element: <Categories /> },
-      { path: 'brands', element: <Brands /> },
-      { path: 'cart', element: <Cart /> },
+      { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
+      { path: 'categories', element: <ProtectedRoute><Categories /></ProtectedRoute> },
+      { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
+      { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
       { path: '*', element: <Notfound /> },
     ]
   }
