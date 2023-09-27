@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import UserContextProvider from './Context/UserContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
-// import { ReactQueryDevtools } from 'react-query/devtools';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let queryClient = new QueryClient();
@@ -16,6 +16,6 @@ root.render(
     <UserContextProvider>
       <App />
     </UserContextProvider>
-    {/* < ReactQueryDevtools initialIsOpen="false" position='bottom-right' /> */}
+    < ReactQueryDevtools initialIsOpen="false" position='bottom-right' />
   </QueryClientProvider>
 );
