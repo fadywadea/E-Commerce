@@ -16,15 +16,17 @@ export default function Login() {
   async function loginSubmit(values) {
     setisLoading(true);
     let { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values)
-      .catch((err) => {
-        setisLoading(false);
-        setError(err.response.data.message)
-      });
+      .catch(
+        (err) => {
+          setisLoading(false);
+          setError(err.response.data.message)
+        }
+      );
     if (data.message === 'success') {
       // console.log(data.token);
 
       setisLoading(false);
-      localStorage.setItem("userToken", data.token);
+      localStorage.setItem('userToken', data.token);
       setUserToken(data.token);
       navigate('/');
     }

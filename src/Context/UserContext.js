@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
-import { createContext } from 'react'
+import { createContext, useState } from 'react';
 
 export let userContext = createContext();
 

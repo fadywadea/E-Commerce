@@ -54,9 +54,11 @@ export default function Navbar() {
               <i className='fab fa-linkedin mx-2'></i>
               <i className='fab fa-youtube mx-2'></i>
             </li>
-            {userToken !== null ? <li className="nav-item">
-              <span onClick={() => logOut()} className="nav-link cursor-pointer">Logout</span>
-            </li> : <>
+            {userToken !== null ? <>
+              <li className="nav-item">
+                <span onClick={() => logOut()} className="nav-link cursor-pointer">Logout</span>
+              </li>
+            </> : <>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">Login</Link>
               </li>
