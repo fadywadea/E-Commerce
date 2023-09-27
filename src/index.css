@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
 :root {
   --main-color: #0aad0a;
+  --hover-color: #3fa43f;
   --light-color: #f0f3f2;
   --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
     rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
@@ -25,11 +26,11 @@ a:hover {
   text-decoration: none;
 }
 .product:hover {
-  box-shadow: var(--shadow);
-  border: solid 1px var(--main-color);
+  box-shadow: 1px 1px 10px #4fa74f;
+  /* border: solid 1px var(--main-color); */
 }
 .product .btn {
-  transition: transform 1s, opacity 1s;
+  transition: transform 0.5s, opacity 0.5s;
   transform: translateY(100%);
   opacity: 0;
 }
@@ -42,6 +43,18 @@ a:hover {
 }
 .text-main {
   color: var(--main-color);
+}
+.title {
+  font-size: 29.3216px;
+  font-weight: 800;
+}
+.forget a {
+  font-size: 20px;
+  font-weight: 800;
+}
+.forget a:hover {
+  color: var(--hover-color);
+  transition: all 0.5s;
 }
 .bg-main {
   background-color: var(--main-color) !important;

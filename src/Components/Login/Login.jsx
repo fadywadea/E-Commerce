@@ -46,7 +46,7 @@ export default function Login() {
   return <>
     <div className="w-75 mx-auto py-5">
       {error !== null ? <div className="alert alert-danger">{error}</div> : ''};
-      <h2 className=''>Login Now</h2>
+      <h2 className='title'>login now</h2>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor='email'>Email:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} className='form-control mb-2' id='email' name='email' type="email" />
@@ -54,7 +54,7 @@ export default function Login() {
         <label htmlFor='password'>Password:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} className='form-control mb-2' id='password' name='password' type="password" />
         {formik.errors.password && formik.touched.password ? <div className="alert alert-danger mt-2 p-2">{formik.errors.password}</div> : ""}
-        <div className='d-flex algin-items-center'>
+        <div className='d-flex algin-items-center forget'>
           {isLoading ? <button className='btn btn-lg bg-main mt-2 ms-auto'>
             <RotatingLines
               strokeColor="white"
@@ -65,7 +65,7 @@ export default function Login() {
             />
           </button>
             : <>
-              <Link className='btn me-auto' to={'/register'}>Register Now</Link>
+              <Link className='btn me-auto' to={'/register'}>forget your password ?</Link>
               <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn btn-lg mt-2 ms-auto' : 'btn btn-lg bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
             </>
           }
