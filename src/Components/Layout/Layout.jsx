@@ -9,7 +9,9 @@ export default function Layout() {
 
   return <>
     <Navbar />
-    <Outlet></Outlet>
+    <div className="container">
+      <Outlet></Outlet>
+    </div>
     <Footer />
   </>
 }
