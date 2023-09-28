@@ -19,9 +19,9 @@ export default function FeaturedProducts() {
     // staleTime: 3000,
     // enabled: true
   });
-  console.log("isLoading", isLoading);
-  console.log("isFetching", isFetching);
-  console.log("isError", isError);
+  // console.log("isLoading", isLoading);
+  // console.log("isFetching", isFetching);
+  // console.log("isError", isError);
 
   // console.log(data?.data.data);
 
