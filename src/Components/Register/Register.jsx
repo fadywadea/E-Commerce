@@ -69,9 +69,9 @@ export default function Register() {
     onSubmit: registerSubmit
   })
   return <>
-    <div className="w-75 mx-auto py-5">
-      {error !== null ? <div className="alert alert-danger">{error}</div> : ''};
-      <h2>Register Now</h2>
+    <div className="w-75 mx-auto mt-5">
+      {error !== null ? <div className="alert alert-danger">{error}</div> : ''}
+      <h2 className='title my-4'>Register Now</h2>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor='name'>Name:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.name} className='form-control mb-2' id='name' name='name' type="text" />

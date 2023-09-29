@@ -19,7 +19,7 @@ export default function Login() {
       .catch(
         (err) => {
           setisLoading(false);
-          setError(err.response.data.message)
+          setError(err.response.data.message);
         }
       );
     if (data.message === 'success') {
@@ -44,9 +44,9 @@ export default function Login() {
     onSubmit: loginSubmit
   });
   return <>
-    <div className="w-75 mx-auto py-5">
-      {error !== null ? <div className="alert alert-danger">{error}</div> : ''};
-      <h2 className='title'>login now</h2>
+    <div className="w-75 mx-auto my-5">
+      {error !== null ? <div className="alert alert-danger">{error}</div> : ''}
+      <h2 className='title my-4'>Login Now</h2>
       <form onSubmit={formik.handleSubmit}>
         <label htmlFor='email'>Email:</label>
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} className='form-control mb-2' id='email' name='email' type="email" />
@@ -65,7 +65,7 @@ export default function Login() {
             />
           </button>
             : <>
-              <Link className='btn me-auto' to={'/register'}>forget your password ?</Link>
+              <Link className='btn me-auto my-auto p-0' to={'/forgotPassword'}>forget your password ?</Link>
               <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn btn-lg mt-2 ms-auto' : 'btn btn-lg bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
             </>
           }

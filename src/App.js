@@ -15,8 +15,8 @@ import { useContext, useEffect } from 'react';
 import { userContext } from './Context/UserContext';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
-
-
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
+import ResetPassword from './Components/ResetPassword/ResetPassword';
 
 let routers = createBrowserRouter([
   {
@@ -29,6 +29,8 @@ let routers = createBrowserRouter([
       { path: 'brands', element: <ProtectedRoute><Brands /></ProtectedRoute> },
       { path: 'cart', element: <ProtectedRoute><Cart /></ProtectedRoute> },
       { path: 'productDetails/:id', element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
+      { path: 'forgotPassword', element: <ForgotPassword /> },
+      { path: 'resetPassword', element: <ResetPassword /> },
       { path: '*', element: <Notfound /> },
     ]
   }
