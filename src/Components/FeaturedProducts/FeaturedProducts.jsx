@@ -12,7 +12,8 @@ export default function FeaturedProducts() {
     return axios.get('https://ecommerce.routemisr.com/api/v1/products');
   };
 
-  let { isLoading, isError, data, isFetching } = useQuery('featuredProducts', getFeaturedProducts, {
+  let { isLoading,data} = useQuery('featuredProducts', getFeaturedProducts, {
+    // isFetching  , isError 
     // cacheTime: 3000,
     // refetchInterval: 5000,
     // refetchOnMount:false,
@@ -41,9 +42,9 @@ export default function FeaturedProducts() {
   // }, [])
 
   return <>
-    {isLoading ? <div className='d-flex justify-content-center w-100 py-5'>
+    {isLoading ? <div className='d-flex justify-content-center align-content-center m-0 p-0'>
       <ThreeDots
-        height="80"
+        height="100vh"
         width="80"
         radius="9"
         color="#4fa94d"

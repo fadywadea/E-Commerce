@@ -9,7 +9,7 @@
     rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
   --font-family: "Encode Sans Expanded", sans-serif;
   --rating-color: #ffc908;
-  --secondary-color: #22DB14;
+  --secondary-color: #22db14;
 }
 
 body {
@@ -20,6 +20,16 @@ body {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.network {
+  padding: 20px;
+  background-color: mediumspringgreen;
+  color: red;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 99999;
+  box-shadow: var(--shadow);
 }
 a,
 a:hover {
@@ -67,4 +77,23 @@ a:hover {
 }
 .btn-cart {
   background-color: var(--secondary-color) !important;
+}
+
+.categories {
+  border: solid 0.5px rgb(186, 186, 186);
+  transition: all 0.5s;
+}
+.categories:hover {
+  box-shadow: 1px 1px 10px #4fa74f;
+}
+.brands {
+  border: solid 0.5px rgb(186, 186, 186);
+  transition: all 0.5s;
+}
+.brands:hover {
+  box-shadow: 1px 1px 10px #4fa74f;
+}
+.brands-title {
+  color: #4fa74f;
+  font-weight: 900;
 }

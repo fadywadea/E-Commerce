@@ -6,6 +6,7 @@ import { useQuery } from 'react-query';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Helmet } from 'react-helmet';
 
 export default function ProductDetails() {
   let params = useParams();
@@ -30,16 +31,20 @@ export default function ProductDetails() {
 
   const settings = {
     dots: true,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2500,
-      pauseOnHover: true
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: true
   };
 
   return <>
+
     {data?.data.data ? <div className='row mt-3 align-items-center'>
+      <Helmet>
+        <title>{data?.data.data.title}</title>
+      </Helmet>
       <div className="col-md-4">
         <div>
           {data?.data.data ?
