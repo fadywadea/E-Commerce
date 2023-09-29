@@ -13,6 +13,7 @@ export default function Login() {
   let navigate = useNavigate();
   const [error, setError] = useState(null);
   const [isLoading, setisLoading] = useState(false);
+
   async function loginSubmit(values) {
     setisLoading(true);
     let { data } = await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values)
@@ -20,21 +21,21 @@ export default function Login() {
         (err) => {
           setisLoading(false);
           setError(err.response.data.message);
-        }
-      );
+        });
     if (data.message === 'success') {
       // console.log(data.token);
-
       setisLoading(false);
       localStorage.setItem('userToken', data.token);
       setUserToken(data.token);
       navigate('/');
     }
   };
+
   let validateScheme = Yup.object({
     email: Yup.string().email("email is invalid").required("email is required"),
     password: Yup.string().required("password is required"),
   });
+
   let formik = useFormik({
     initialValues: {
       email: '',
@@ -43,6 +44,7 @@ export default function Login() {
     validationSchema: validateScheme,
     onSubmit: loginSubmit
   });
+
   return <>
     <div className="w-75 mx-auto my-5">
       {error !== null ? <div className="alert alert-danger">{error}</div> : ''}
