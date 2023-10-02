@@ -7,6 +7,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner'
 // import { useContext } from 'react';
 import { userContext } from '../../Context/UserContext';
+import { Helmet } from 'react-helmet';
 
 export default function Login() {
   let { setUserToken } = useContext(userContext);
@@ -47,6 +48,14 @@ export default function Login() {
 
   return <>
     <div className="w-75 mx-auto my-5">
+      <Helmet>
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Login</title>
+      </Helmet>
       {error !== null ? <div className="alert alert-danger">{error}</div> : ''}
       <h2 className='title my-4'>Login Now</h2>
       <form onSubmit={formik.handleSubmit}>
