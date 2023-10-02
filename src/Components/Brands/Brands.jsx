@@ -36,7 +36,6 @@ export default function Brands() {
             </div>
           )}
         </div>
-
       </div>};
   </>
 }

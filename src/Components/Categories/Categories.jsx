@@ -1,21 +1,21 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React from 'react'
-import { ThreeDots } from 'react-loader-spinner';
-import { useQuery } from 'react-query';
-import SpecificCategory from '../SpecificCategory/SpecificCategory';
+// import { ThreeDots } from 'react-loader-spinner';
+// import { useQuery } from 'react-query';
+// import SpecificCategory from '../SpecificCategory/SpecificCategory';
 
 export default function Categories() {
 
-  function getCategories() {
-    return axios.get('https://ecommerce.routemisr.com/api/v1/categories');
-  };
+  // function getCategories() {
+  //   return axios.get('https://ecommerce.routemisr.com/api/v1/categories');
+  // };
 
-  let { isLoading, data } = useQuery('featuredProducts', getCategories, {
-  });
+  // let { isLoading, data } = useQuery('featuredProducts', getCategories, {
+  // });
 
 
   return <>
-    {isLoading ?
+    {/* {isLoading ?
       <div className='d-flex justify-content-center align-content-center m-0 p-0'>
         < ThreeDots
           height="100vh"
@@ -39,7 +39,7 @@ export default function Categories() {
         </div>)}
         <SpecificCategory />
       </div>
-    }
+    } */}
 
   </>
 }
