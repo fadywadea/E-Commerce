@@ -1,35 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
 :root {
-  --main-color: #007e00;
-  --hover-color: #3fa43f;
-  --light-color: #f0f3f2;
+  --main-color: #007e00 !important;
+  --hover-color: #3fa43f !important;
+  --light-color: #f0f3f2 !important;
   --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
     rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
-    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
-  --font-family: "Encode Sans Expanded", sans-serif;
-  --rating-color: #ffc908;
-  --secondary-color: #22db14;
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px !important;
+  --font-family: "Encode Sans Expanded", sans-serif !important;
+  --rating-color: #ffc908 !important;
+  --secondary-color: #22db14 !important;
 }
 
 body {
   font-family: var(--font-family) !important;
 }
 .rating-color {
-  color: var(--rating-color);
+  color: var(--rating-color) !important;
 }
 .cursor-pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .network {
-  padding: 20px;
-  background-color: mediumspringgreen;
-  color: red;
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 99999;
-  box-shadow: var(--shadow);
+  padding: 20px !important;
+  background-color: mediumspringgreen !important;
+  color: red !important;
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 30px !important;
+  z-index: 99999 !important;
+  box-shadow: var(--shadow) !important;
 }
 a,
 a:hover {
@@ -37,37 +37,37 @@ a:hover {
   text-decoration: none !important;
 }
 .product {
-  transition: all 0.5s;
+  transition: all 0.5s !important;
 }
 .product:hover {
-  box-shadow: 1px 1px 10px #4fa74f;
+  box-shadow: 1px 1px 10px #4fa74f !important;
 }
 .product .btn {
-  transition: transform 0.5s, opacity 0.5s;
-  transform: translateY(100%);
-  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s !important;
+  transform: translateY(100%) !important;
+  opacity: 0 !important;
 }
 .product:hover .btn {
-  opacity: 1;
-  transform: translateY(0%);
+  opacity: 1 !important;
+  transform: translateY(0%) !important;
 }
 .font-sm {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 .text-main {
-  color: var(--main-color);
+  color: var(--main-color) !important;
 }
 .title {
-  font-size: 29.3216px;
-  font-weight: 800;
+  font-size: 29.3216px !important;
+  font-weight: 800 !important;
 }
 .forget a {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 20px !important;
+  font-weight: 800 !important;
 }
 .forget a:hover {
-  color: var(--hover-color);
-  transition: all 0.5s;
+  color: var(--hover-color) !important;
+  transition: all 0.5s !important;
 }
 .bg-main {
   background-color: var(--main-color) !important;
@@ -80,20 +80,23 @@ a:hover {
 }
 
 .categories {
-  border: solid 0.5px rgb(186, 186, 186);
-  transition: all 0.5s;
+  border: solid 0.5px rgb(186, 186, 186) !important;
+  transition: all 0.5s !important;
 }
 .categories:hover {
-  box-shadow: 1px 1px 10px #4fa74f;
+  box-shadow: 1px 1px 10px #4fa74f !important;
 }
 .brands {
-  border: solid 0.5px rgb(186, 186, 186);
-  transition: all 0.5s;
+  border: solid 0.5px rgb(186, 186, 186) !important;
+  transition: all 0.5s !important;
 }
 .brands:hover {
-  box-shadow: 1px 1px 10px #4fa74f;
+  box-shadow: 1px 1px 10px #4fa74f !important;
 }
 .brands-title {
-  color: #4fa74f;
-  font-weight: 900;
+  color: #4fa74f !important;
+  font-weight: 900 !important;
+}
+.color-numbers {
+  color: #22db14;
 }

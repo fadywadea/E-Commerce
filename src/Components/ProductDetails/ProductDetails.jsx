@@ -1,5 +1,5 @@
 import React from 'react'
-// import Style from './ProductDetails.module.css'
+// useContext
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import { useQuery } from 'react-query';
@@ -7,8 +7,49 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Helmet } from 'react-helmet';
+// import { CartContext } from '../../Context/CartContext';
+// import { toast } from 'react-toastify';
 
 export default function ProductDetails() {
+
+  // let { addToCart } = useContext(CartContext);
+
+  // async function addProductToCart(id) {
+
+  //   let response = await addToCart(id);
+
+  //   if (response.data.status === 'success') {
+  //     const notify = () => {
+  //       toast.success((response.data.message), {
+  //         position: "top-right",
+  //         autoClose: 3000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: false,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "dark"
+  //       });
+  //     }
+  //     notify();
+  //   } else {
+  //     const notify = () => {
+  //       toast.error((response.data.message), {
+  //         position: "top-right",
+  //         autoClose: 3000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: false,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "dark",
+  //       });
+  //     }
+  //     notify();
+  //   }
+  //   // console.log(response);
+  // }
+
   let params = useParams();
 
   function getProductDetails(id) {
@@ -70,7 +111,7 @@ export default function ProductDetails() {
           <span>ratingsQuantity: {data?.data.data?.ratingsQuantity}</span>
           <span> <i className='fas fa-star rating-color'></i> {data?.data.data?.ratingsAverage}</span>
         </div>
-        <button className='btn w-75 mx-auto btn-cart mt-3 text-white'>+ Add</button>
+        {/* <button onClick={(pro) => addProductToCart(product?.id)} className='btn w-75 mx-auto btn-cart mt-3 text-white'>+ Add</button> */}
       </div>
     </div> : ''}
   </>

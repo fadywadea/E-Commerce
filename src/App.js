@@ -17,6 +17,10 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 import ResetPassword from './Components/ResetPassword/ResetPassword';
+import CartContextProvider from './Context/CartContext';
+// import { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 let routers = createBrowserRouter([
   {
@@ -37,6 +41,7 @@ let routers = createBrowserRouter([
 ]);
 
 function App() {
+
   let { setUserToken } = useContext(userContext);
 
   useEffect(() => {
@@ -45,9 +50,13 @@ function App() {
     }
   })
 
-  return <CounterContextProvider>
-    <RouterProvider router={routers}></RouterProvider>
-  </CounterContextProvider>
+  return <CartContextProvider>
+    <CounterContextProvider>
+      <RouterProvider router={routers}></RouterProvider>
+    </CounterContextProvider>
+    {/* <Toaster /> */}
+    <ToastContainer />
+  </CartContextProvider>
 }
 
 export default App;

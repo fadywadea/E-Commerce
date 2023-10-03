@@ -18,14 +18,6 @@ export default function Categories() {
   return <>
     {isLoading ?
       <div className='d-flex justify-content-center align-content-center m-0 p-0'>
-      <Helmet>
-        <meta name="description" content="Web site created using create-react-app" />
-        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <title>Categories</title>
-      </Helmet>
         < ThreeDots
           height="100vh"
           width="80"
@@ -38,6 +30,14 @@ export default function Categories() {
         />
       </div > :
       <div className='row g-4 py-4'>
+        <Helmet>
+          <meta name="description" content="Web site created using create-react-app" />
+          <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <title>Categories</title>
+        </Helmet>
         {data?.data.data?.map((categories) => <div key={categories?._id} className="col-md-4">
           <div className='categories cursor-pointer rounded'>
             <img style={{ height: 380 }} className='w-100' src={categories?.image} alt={categories?.slug} />
