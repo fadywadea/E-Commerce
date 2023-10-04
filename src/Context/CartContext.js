@@ -26,6 +26,8 @@ function getLoggedUserCart() {
     .catch((err) => err)
 }
 
+
+
 function removeCartItem(productId) {
   return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     {
@@ -34,8 +36,10 @@ function removeCartItem(productId) {
     .catch((erro) => erro)
 };
 
+
 export default function CartContextProvider(props) {
-  return <CartContext.Provider value={{ addToCart, getLoggedUserCart, removeCartItem }}>
+
+return <CartContext.Provider value={{ addToCart, getLoggedUserCart, removeCartItem }}>
     {props.children}
   </CartContext.Provider>
 }

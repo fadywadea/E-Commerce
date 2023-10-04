@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import axios from 'axios'
 import { useQuery } from 'react-query';
 import { ThreeDots } from 'react-loader-spinner';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 import { toast } from 'react-toastify';
 // import toast from 'react-hot-toast';
-
 
 export default function FeaturedProducts() {
 
@@ -18,7 +17,7 @@ export default function FeaturedProducts() {
 
     if (response.data.status === 'success') {
       const notify = () => {
-        toast.success((response.data.message), {
+        toast.success((response.data?.message.split(" ").slice(0, 3).join(" ")), {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -32,7 +31,7 @@ export default function FeaturedProducts() {
       notify();
     } else {
       const notify = () => {
-        toast.error((response.data.message), {
+        toast.error((response.data?.message), {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -45,7 +44,6 @@ export default function FeaturedProducts() {
       }
       notify();
     }
-
     // console.log(response);
   }
 
@@ -76,13 +74,12 @@ export default function FeaturedProducts() {
   //   setIsLoading(true);
   // }
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   getFeaturedProducts();
-  // }, [])
+    getsFeaturedProducts();
+  }, [])
 
   return <>
-
     {isLoading ?
       <div className='d-flex justify-content-center align-content-center m-0 p-0'>
         <ThreeDots
