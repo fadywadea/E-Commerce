@@ -15,7 +15,7 @@ export default function SectionProducts() {
 
     let response = await addToCart(id);
 
-    if (response.data.status === 'success') {
+    if (response.data?.status === 'success') {
       const notify = () => {
         toast.success((response.data?.message.split(" ").slice(0, 3).join(" ")), {
           position: "top-right",

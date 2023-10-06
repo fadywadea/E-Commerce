@@ -24,7 +24,7 @@ export default function Cart() {
 
   useEffect(() => {
     getCart();
-  }, [cartDetails]);
+  });
 
 
   return <>
@@ -65,7 +65,7 @@ export default function Cart() {
                   <button className='btn btn-outline-danger'>-</button>
                 </div>
               </div>
-              <button onClick={() => removeItem(product.product.id)} className='btn btn-outline-danger font-sm p-1'> <i className=' fas fa-trash-can'></i> Remove</button>
+              <button onClick={() => removeItem(product.product?.id)} className='btn btn-outline-danger font-sm p-1'> <i className=' fas fa-trash-can'></i> Remove</button>
             </div>
           </div>)}
       </section> :
