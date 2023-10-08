@@ -54,7 +54,6 @@ export default function SectionProducts() {
   let { isLoading, data } = useQuery('featuredProducts', getFeaturedProducts);
 
   useEffect(() => {
-
     getFeaturedProducts();
   }, [])
 
@@ -88,8 +87,8 @@ export default function SectionProducts() {
               <div className='product cursor-pointer px-2 py-4 rounded'>
                 <Link to={`/productDetails/${product?.id}`}>
                   <img className='w-100' src={product?.imageCover} alt={product?.title} />
-                  <span className='text-main font-sm fw-bolder'>{product.category?.name}</span>
-                  <h3 className='h6'>{product.title?.split(" ").slice(0, 2).join(" ")}</h3>
+                  <span className='text-main font-sm fw-bolder'>{product?.category?.name}</span>
+                  <h3 className='h6'>{product?.title?.split(" ").slice(0, 2).join(" ")}</h3>
                   <div className='d-flex justify-content-between mt-3'>
                     <span>{product?.price} EGP</span>
                     <span><i className='fas fa-star rating-color'></i>{product?.ratingsAverage}</span>

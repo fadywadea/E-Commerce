@@ -12,10 +12,8 @@ export default function FeaturedProducts() {
   let { addToCart } = useContext(CartContext);
 
   async function addProductToCart(id) {
-
     let response = await addToCart(id);
-
-    if (response.data.status === 'success') {
+    if (response.data?.status === 'success') {
       const notify = () => {
         toast.success((response.data?.message.split(" ").slice(0, 3).join(" ")), {
           position: "top-right",
@@ -44,7 +42,6 @@ export default function FeaturedProducts() {
       }
       notify();
     }
-    // console.log(response);
   }
 
   function getsFeaturedProducts() {
@@ -75,7 +72,6 @@ export default function FeaturedProducts() {
   // }
 
   useEffect(() => {
-
     getsFeaturedProducts();
   }, [])
 
@@ -101,8 +97,8 @@ export default function FeaturedProducts() {
               <div className='product cursor-pointer px-2 py-4 rounded'>
                 <Link to={`/productDetails/${product?.id}`}>
                   <img className='w-100' src={product?.imageCover} alt={product?.title} />
-                  <span className='text-main font-sm fw-bolder'>{product.category?.name}</span>
-                  <h3 className='h6'>{product.title?.split(" ").slice(0, 2).join(" ")}</h3>
+                  <span className='text-main font-sm fw-bolder'>{product?.category?.name}</span>
+                  <h3 className='h6'>{product?.title?.split(" ").slice(0, 2).join(" ")}</h3>
                   <div className='d-flex justify-content-between mt-3'>
                     <span>{product?.price} EGP</span>
                     <span><i className='fas fa-star rating-color'></i>{product?.ratingsAverage}</span>

@@ -26,8 +26,6 @@ function getLoggedUserCart() {
     .catch((err) => err)
 }
 
-
-
 function removeCartItem(productId) {
   return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     {
@@ -36,10 +34,19 @@ function removeCartItem(productId) {
     .catch((erro) => erro)
 };
 
+function updateProductQuantity(productId, count) {
+  return axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
+    {
+      count: count
+    },
+    {
+      headers: header
+    }).then((response) => response)
+    .catch((error) => error)
+}
 
 export default function CartContextProvider(props) {
-
-return <CartContext.Provider value={{ addToCart, getLoggedUserCart, removeCartItem }}>
+  return <CartContext.Provider value={{ addToCart, getLoggedUserCart, removeCartItem, updateProductQuantity }}>
     {props.children}
   </CartContext.Provider>
 }
