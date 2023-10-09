@@ -11,6 +11,11 @@ export default function Cart() {
 
   // let { isLoading } = useQuery('carts', getCart);
 
+  async function updateCount(id, count) {
+    let { data } = await updateProductQuantity(id, count);
+    setCartDetails(data);
+  }
+
   async function removeItem(id) {
     let { data } = await removeCartItem(id);
     setCartDetails(data);
@@ -23,13 +28,7 @@ export default function Cart() {
 
   useEffect(() => {
     getCart();
-  })
-
-
-  async function updateCount(id, count) {
-    let { data } = await updateProductQuantity(id, count);
-    setCartDetails(data);
-  }
+  }, []);
 
   return <>
     {cartDetails ?
@@ -64,9 +63,9 @@ export default function Cart() {
                   <h4 className='h6 text-main'> Price : {product?.price}</h4>
                 </div>
                 <div>
-                  <button onClick={() => updateCount()} className='btn btn-outline-success'>+</button>
+                  <button onClick={() => updateCount(product?.product.id, product?.count + 1)} className='btn btn-outline-success'>+</button>
                   <span className='mx-2'>{product?.count}</span>
-                  <button className='btn btn-outline-danger'>-</button>
+                  <button onClick={() => updateCount(product?.product.id, product?.count - 1)} className='btn btn-outline-danger'>-</button>
                 </div>
               </div>
               <button onClick={() => removeItem(product?.product.id)} className='btn btn-outline-danger font-sm p-1'> <i className=' fas fa-trash-can'></i> Remove</button>

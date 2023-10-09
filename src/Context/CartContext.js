@@ -4,7 +4,7 @@ import { createContext } from "react";
 export let CartContext = createContext();
 
 let userToken = localStorage.getItem('userToken');
-let header = {
+let headers = {
   token: userToken
 };
 
@@ -13,7 +13,7 @@ function addToCart(id) {
     productId: id
   },
     {
-      headers: header
+      headers: headers
     }).then((response) => response)
     .catch((error) => error)
 };
@@ -21,7 +21,7 @@ function addToCart(id) {
 function getLoggedUserCart() {
   return axios.get(`https://ecommerce.routemisr.com/api/v1/cart`,
     {
-      headers: header
+      headers: headers
     }).then((response) => response)
     .catch((err) => err)
 }
@@ -29,19 +29,15 @@ function getLoggedUserCart() {
 function removeCartItem(productId) {
   return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     {
-      headers: header
+      headers: headers
     }).then((response) => response)
     .catch((erro) => erro)
 };
 
 function updateProductQuantity(productId, count) {
   return axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
-    {
-      count: count
-    },
-    {
-      headers: header
-    }).then((response) => response)
+    { count: count }, { headers: headers })
+    .then((response) => response)
     .catch((error) => error)
 }
 
