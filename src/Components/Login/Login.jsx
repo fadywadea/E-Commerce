@@ -66,7 +66,7 @@ export default function Login() {
         <input onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.password} className='form-control mb-2' id='password' name='password' type="password" />
         {formik.errors.password && formik.touched.password ? <div className="alert alert-danger mt-2 p-2">{formik.errors.password}</div> : ""}
         <div className='d-flex algin-items-center forget'>
-          {isLoading ? <button className='btn btn-lg bg-main mt-2 ms-auto'>
+          {isLoading ? <button className='btn btn-lg bg-main mt-2 ms-auto text-center'>
             <RotatingLines
               strokeColor="white"
               strokeWidth="5"
@@ -76,8 +76,8 @@ export default function Login() {
             />
           </button>
             : <>
-              <Link className='btn me-auto my-auto p-0' to={'/forgotPassword'}>forget your password ?</Link>
-              <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn btn-lg mt-2 ms-auto' : 'btn btn-lg bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
+              <Link className='btn me-auto my-auto py-0' to={'/forgotPassword'}>forget your password ?</Link>
+              <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn align-items-center mt-2 ms-auto' : 'btn align-items-center bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
             </>
           }
         </div>

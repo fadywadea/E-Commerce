@@ -100,3 +100,12 @@ a:hover {
 .color-numbers {
   color: #22db14;
 }
+@media screen and (max-width: 794px) {
+  .forget a {
+    font-size: 15px !important;
+  }
+  .forget button{
+    height: auto;
+    font-size: small;
+  } 
+}
