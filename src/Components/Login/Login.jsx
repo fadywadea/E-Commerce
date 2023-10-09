@@ -76,8 +76,8 @@ export default function Login() {
             />
           </button>
             : <>
-              <Link className='btn me-auto my-auto py-0' to={'/forgotPassword'}>forget your password ?</Link>
-              <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn align-items-center mt-2 ms-auto' : 'btn align-items-center bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
+              <Link className='btn mx-0 me-auto my-auto py-0' to={'/forgotPassword'}>forget your password ?</Link>
+              <button disabled={!(formik.isValid && formik.dirty)} className={!(formik.isValid && formik.dirty) ? 'btn  mt-2 ms-auto' : 'btn bg-main text-white mt-2 ms-auto'} type='submit'>Login</button>
             </>
           }
         </div>
