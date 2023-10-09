@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider , createHashRouter } from 'react-router-dom';
 import Layout from './Components/Layout/Layout';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
@@ -22,7 +22,7 @@ import CartContextProvider from './Context/CartContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-let routers = createBrowserRouter([
+let routers = createHashRouter([
   {
     path: '/', element: <Layout />, children: [
       { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
