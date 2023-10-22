@@ -48,7 +48,7 @@ function App() {
     if (localStorage.getItem('userToken') !== null) {
       setUserToken(localStorage.getItem('userToken'));
     }
-  });
+  },[]);
 
   return <CartContextProvider>
     <CounterContextProvider>
