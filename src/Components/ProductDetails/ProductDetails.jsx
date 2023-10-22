@@ -83,7 +83,7 @@ export default function ProductDetails() {
 
   return <>
 
-    {data?.data.data ? <div className='row mt-3 align-items-center'>
+    {data?.data.data ? <div className='row align-items-center'>
       <Helmet>
         <meta name="description" content="Web site created using create-react-app" />
         <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
@@ -92,17 +92,17 @@ export default function ProductDetails() {
         <meta name="theme-color" content="#000000" />
         <title>{data?.data.data.title}</title>
       </Helmet>
-      <div className="col-md-4">
+      <div className="col-md-4 p-2">
         <div>
           {data?.data.data ?
             <Slider {...settings}>
               {data?.data.data.images?.map((x) =>
                 <img key={data?.data.data?.id} style={{ height: "200" }} className='w-100' src={x} alt={data?.data.data?.title} />)}
             </Slider> : ''}
-
         </div>
       </div>
-      <div className="col-md-8">
+
+      <div className="col-md-8 p-3">
         <h2 className='h4'>{data?.data.data?.title}</h2>
         <p>{data?.data.data?.description}</p>
         <h6 className='text-main'>{data?.data.data.category?.name}</h6>
