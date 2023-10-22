@@ -1,5 +1,4 @@
 import React from 'react'
-import Style from './Notfound.module.css'
 import { Helmet } from 'react-helmet'
 
 export default function Notfound() {
@@ -12,6 +11,8 @@ export default function Notfound() {
       <meta name="theme-color" content="#000000" />
       <title>Fresh Cart</title>
     </Helmet>
-    <h1 className={Style}>Notfound</h1>
+    <div>
+      <img src="../../Assets/images/" alt="" />
+    </div>
   </>
 }

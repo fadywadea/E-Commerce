@@ -46,9 +46,9 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('userToken') !== null) {
-      setUserToken(localStorage.getItem('userToken'))
+      setUserToken(localStorage.getItem('userToken'));
     }
-  })
+  });
 
   return <CartContextProvider>
     <CounterContextProvider>

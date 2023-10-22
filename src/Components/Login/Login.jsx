@@ -24,7 +24,7 @@ export default function Login() {
           setError(err.response.data.message);
         });
     if (data.message === 'success') {
-      // console.log(data.token);
+      console.log(data.token);
       setisLoading(false);
       localStorage.setItem('userToken', data.token);
       setUserToken(data.token);

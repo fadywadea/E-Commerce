@@ -29,7 +29,7 @@ export default function CategorySlider() {
   return <>
 
     {data?.data.data ?
-      <div className=' py-3'>
+      <div className='py-3'>
         <Helmet>
           <meta name="description" content="Web site created using create-react-app" />
           <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />

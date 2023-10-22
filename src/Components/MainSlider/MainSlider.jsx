@@ -30,7 +30,7 @@ export default function MainSlider() {
         <meta name="theme-color" content="#000000" />
         <title>Fresh Cart</title>
       </Helmet>
-      <div className='col-md-9 '>
+      <div className='col-md-9'>
         <Slider {...settings}>
           <img className='w-100' height={300} src={slider1} alt="products" />
           <img className='w-100' height={300} src={slider2} alt="products" />
