@@ -28,7 +28,7 @@ export default function Cart() {
 
   useEffect(() => {
     getCart();
-  });
+  },[]);
 
   return <>
     {cartDetails ?

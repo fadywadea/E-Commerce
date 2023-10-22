@@ -3,7 +3,8 @@ import React, { useState, useContext } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
+// useNavigate
 import { RotatingLines } from 'react-loader-spinner'
 // import { useContext } from 'react';
 import { userContext } from '../../Context/UserContext';
@@ -11,7 +12,7 @@ import { Helmet } from 'react-helmet';
 
 export default function Login() {
   let { setUserToken } = useContext(userContext);
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const [error, setError] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
@@ -28,7 +29,8 @@ export default function Login() {
       setisLoading(false);
       localStorage.setItem('userToken', data.token);
       setUserToken(data.token);
-      navigate('/');
+      window.location.href="/"
+      // navigate('/');
     }
   };
 
