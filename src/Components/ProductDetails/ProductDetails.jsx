@@ -47,7 +47,7 @@ export default function ProductDetails() {
   //     }
   //     notify();
   //   }
-  //   // console.log(response);
+  //  console.log(response);
   // }
 
   let params = useParams();

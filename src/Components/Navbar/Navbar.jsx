@@ -14,7 +14,7 @@ export default function Navbar() {
   function logOut() {
     localStorage.removeItem('userToken');
     setUserToken(null);
-    console.log(userToken);
+    // console.log(userToken);
     navigate('/login');
   }
 
