@@ -8,7 +8,7 @@ let headers = {
   token: userToken
 };
 
-function addToCart(id) {
+async function addToCart(id) {
   return axios.post(`https://ecommerce.routemisr.com/api/v1/cart`, {
     productId: id
   },
@@ -18,7 +18,7 @@ function addToCart(id) {
     .catch((error) => error)
 };
 
-function getLoggedUserCart() {
+async function getLoggedUserCart() {
   return axios.get(`https://ecommerce.routemisr.com/api/v1/cart`,
     {
       headers: headers
@@ -26,7 +26,7 @@ function getLoggedUserCart() {
     .catch((err) => err)
 }
 
-function removeCartItem(productId) {
+async function removeCartItem(productId) {
   return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     {
       headers: headers
@@ -34,7 +34,7 @@ function removeCartItem(productId) {
     .catch((erro) => erro)
 };
 
-function updateProductQuantity(productId, count) {
+async function updateProductQuantity(productId, count) {
   return axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
     { count: count }, { headers: headers })
     .then((response) => response)
