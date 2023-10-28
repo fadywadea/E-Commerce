@@ -13,6 +13,9 @@ export default function Cart() {
 
   async function updateCount(id, count) {
     let { data } = await updateProductQuantity(id, count);
+    if (count < 1) {
+      removeItem(id);
+    }
     setCartDetails(data);
   }
 
