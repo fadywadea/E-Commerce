@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
-import { userContext , useNavigate } from "../../Context/UserContext";
+import { userContext  } from "../../Context/UserContext";
 import { Helmet } from "react-helmet";
 
 export default function Login() {
