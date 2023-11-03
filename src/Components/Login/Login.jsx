@@ -4,12 +4,12 @@ import * as Yup from "yup";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
-import { userContext } from "../../Context/UserContext";
+import { userContext , useNavigate } from "../../Context/UserContext";
 import { Helmet } from "react-helmet";
 
 export default function Login() {
   let { setUserToken } = useContext(userContext);
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   const [error, setError] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
@@ -25,8 +25,8 @@ export default function Login() {
       setisLoading(false);
       localStorage.setItem("userToken", data.token);
       setUserToken(data.token);
-      window.location.href = "/";
-      // navigate('/');
+      // window.location.href = "/";
+      navigate('/');
     }
   }
 
