@@ -11,16 +11,16 @@ export default function Brands() {
   let { data, isLoading } = useQuery("GetBrands", getBrands);
   return (
     <>
+      <Helmet>
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Brands</title>
+      </Helmet>
       {isLoading ? (
         <div className="d-flex justify-content-center align-content-center m-0 p-0">
-          <Helmet>
-            <meta name="description" content="Web site created using create-react-app"/>
-            <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <meta name="theme-color" content="#000000" />
-            <title>Brands</title>
-          </Helmet>
           <ThreeDots
             height="100vh"
             width="80"
@@ -34,14 +34,6 @@ export default function Brands() {
         </div>
       ) : (
         <div className="container py-3">
-          <Helmet>
-            <meta name="description" content="Web site created using create-react-app"/>
-            <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <meta name="theme-color" content="#000000" />
-            <title>Brands</title>
-          </Helmet>
           <div className="row">
             <span className="brands-title text-center fs-1">All Brands</span>
             {data?.data.data.map((img) => (
@@ -54,8 +46,7 @@ export default function Brands() {
             ))}
           </div>
         </div>
-      )}
-      ;
+      )};
     </>
   );
 }

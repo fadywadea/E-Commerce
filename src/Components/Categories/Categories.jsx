@@ -14,6 +14,14 @@ export default function Categories() {
 
   return (
     <>
+      <Helmet>
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Categories</title>
+      </Helmet>
       {isLoading ? (
         <div className="d-flex justify-content-center align-content-center m-0 p-0">
           <ThreeDots
@@ -29,14 +37,6 @@ export default function Categories() {
         </div>
       ) : (
         <div className="row g-4 py-4">
-          <Helmet>
-            <meta name="description" content="Web site created using create-react-app"/>
-            <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <meta name="theme-color" content="#000000" />
-            <title>Categories</title>
-          </Helmet>
           {data?.data.data?.map((categories) => (
             <div key={categories?._id} className="col-md-4">
               <div className="categories cursor-pointer rounded">

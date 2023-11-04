@@ -38,7 +38,7 @@ async function removeCartItem(productId) {
       headers: headers,
     })
     .then((response) => response)
-    .catch((erro) => erro);
+    .catch((error) => error);
 }
 
 async function updateProductQuantity(productId, count) {
@@ -51,6 +51,8 @@ async function updateProductQuantity(productId, count) {
     .then((response) => response)
     .catch((error) => error);
 }
+
+
 
 export default function CartContextProvider(props) {
   return (

@@ -57,6 +57,14 @@ export default function SectionProducts() {
 
   return (
     <>
+      <Helmet>
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Products</title>
+      </Helmet>
       {isLoading ? (
         <div className="d-flex justify-content-center align-content-center m-0 p-0">
           <ThreeDots
@@ -72,20 +80,16 @@ export default function SectionProducts() {
         </div>
       ) : (
         <div className="container py-2">
-          <Helmet>
-            <meta name="description" content="Web site created using create-react-app" />
-            <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="theme-color" content="#000000" />
-            <title>Products</title>
-          </Helmet>
           <div className="row">
             {data?.data.data?.map((product) => (
               <div key={product?._id} className="col-md-3">
                 <div className="product cursor-pointer px-2 py-4 rounded">
                   <Link to={`/productDetails/${product?.id}`}>
-                    <img className="w-100" src={product?.imageCover} alt={product?.title} />
+                    <img
+                      className="w-100"
+                      src={product?.imageCover}
+                      alt={product?.title}
+                    />
                     <span className="text-main font-sm fw-bolder">
                       {product?.category?.name}
                     </span>
@@ -102,7 +106,8 @@ export default function SectionProducts() {
                   </Link>
                   <button
                     onClick={() => addProductToCart(product?.id)}
-                    className="btn bg-main text-white w-100 btn-sm mt-2">
+                    className="btn bg-main text-white w-100 btn-sm mt-2"
+                  >
                     + Add
                   </button>
                 </div>

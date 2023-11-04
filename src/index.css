@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
 :root {
@@ -74,7 +75,6 @@ a:hover {
 }
 .bg-main-light {
   background-color: var(--light-color) !important;
-  width: 60% !important;
 }
 .btn-cart {
   background-color: var(--secondary-color) !important;
@@ -115,8 +115,5 @@ a:hover {
   }
   .handel-size2 {
     font-size: medium !important;
-  }
-  .bg-main-light {
-    width: 100% !important;
   }
 }

@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
-import { userContext  } from "../../Context/UserContext";
+import { userContext } from "../../Context/UserContext";
 import { Helmet } from "react-helmet";
 
 export default function Login() {
@@ -25,8 +25,8 @@ export default function Login() {
       setisLoading(false);
       localStorage.setItem("userToken", data.token);
       setUserToken(data.token);
-      // window.location.href = "..";
-      navigate('/');
+      // window.location.href = "/";
+      navigate("/");
     }
   }
 
@@ -46,15 +46,15 @@ export default function Login() {
 
   return (
     <>
+      <Helmet>
+        <meta name="description" content="Web site created using create-react-app" />
+        <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Login</title>
+      </Helmet>
       <div className="w-75 mx-auto my-5">
-        <Helmet>
-          <meta name="description" content="Web site created using create-react-app"/>
-          <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <title>Login</title>
-        </Helmet>
         {error !== null ? (
           <div className="alert alert-danger">{error}</div>
         ) : (
@@ -109,7 +109,7 @@ export default function Login() {
               </button>
             ) : (
               <>
-                <Link className="btn mx-0 me-auto my-auto py-0" to={"/forgotPassword"}>
+                <Link className="btn mx-0 me-auto my-auto py-0" to={"/forgotPassword"} >
                   forget your password ?
                 </Link>
                 <button

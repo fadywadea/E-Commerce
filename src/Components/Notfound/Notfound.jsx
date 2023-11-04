@@ -10,7 +10,7 @@ export default function Notfound() {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <title>Fresh Cart</title>
+        <title>Not Found</title>
       </Helmet>
       <div>
         <img src="../../Assets/images/" alt="" />

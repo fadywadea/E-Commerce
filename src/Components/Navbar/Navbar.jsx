@@ -18,15 +18,15 @@ export default function Navbar() {
 
   return (
     <>
+    <Helmet>
+      <meta name="description" content="Web site created using create-react-app"/>
+      <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="theme-color" content="#000000" />
+      <title>Fresh Cart</title>
+    </Helmet>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <Helmet>
-          <meta name="description" content="Web site created using create-react-app"/>
-          <meta name="keywords" content="HTML5 CSS3 Bootstrap JS React" />
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <title>Fresh Cart</title>
-        </Helmet>
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logo} alt="fresh market logo" />
