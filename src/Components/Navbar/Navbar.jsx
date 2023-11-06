@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../Assets/images/freshcart-logo.svg";
-// import { CounterContext } from '../../Context/CounterContext'
 import { userContext } from "../../Context/UserContext";
 import { Helmet } from "react-helmet";
 
 export default function Navbar() {
-  // let { counter } = useContext(CounterContext);
   let { userToken, setUserToken } = useContext(userContext);
   let navigate = useNavigate();
 

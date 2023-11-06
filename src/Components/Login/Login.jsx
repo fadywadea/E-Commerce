@@ -25,7 +25,6 @@ export default function Login() {
       setisLoading(false);
       localStorage.setItem("userToken", data.token);
       setUserToken(data.token);
-      // window.location.href = "/";
       navigate("/");
     }
   }

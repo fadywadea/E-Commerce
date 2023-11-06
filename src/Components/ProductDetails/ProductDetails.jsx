@@ -7,47 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Helmet } from "react-helmet";
-// import { CartContext } from '../../Context/CartContext';
-// import { toast } from 'react-toastify';
 
 export default function ProductDetails() {
-  // let { addToCart } = useContext(CartContext);
-
-  // async function addProductToCart(id) {
-
-  //   let response = await addToCart(id);
-
-  //   if (response.data.status === 'success') {
-  //     const notify = () => {
-  //       toast.success((response.data.message), {
-  //         position: "top-right",
-  //         autoClose: 3000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: false,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: "dark"
-  //       });
-  //     }
-  //     notify();
-  //   } else {
-  //     const notify = () => {
-  //       toast.error((response.data.message), {
-  //         position: "top-right",
-  //         autoClose: 3000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: false,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: "dark",
-  //       });
-  //     }
-  //     notify();
-  //   }
-  //  console.log(response);
-  // }
 
   let params = useParams();
 
@@ -55,19 +16,6 @@ export default function ProductDetails() {
     return axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`);
   }
   let { data } = useQuery("productDetails", () => getProductDetails(params.id));
-  //, isError, isLoading
-  // console.log(data?.data.data);
-  // console.log(isError);
-  // console.log(isLoading);
-
-  // async function getProductDetails(id) {
-  //   let { data } = await axios.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`)
-  //   console.log(data);
-  // }
-
-  // useEffect(() => {
-  //   getProductDetails(params.id)
-  // }, []);
 
   const settings = {
     dots: true,

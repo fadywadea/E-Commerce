@@ -42,7 +42,6 @@ export default function SectionProducts() {
       };
       notify();
     }
-    // console.log(response);
   }
 
   function getFeaturedProducts() {

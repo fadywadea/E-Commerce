@@ -24,33 +24,6 @@ export default function Register() {
     }
   }
 
-  // function validate(values) {
-  //   let errors = {};
-  //   let phoneRegex = /^(011|012|015)[0-9]{8}$/;
-  //   let emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-
-  //   if (!values.name) {
-  //     errors.name = "name is required";
-  //   } else if (values.name.length < 3) {
-  //     errors.name = "name minlength is 3";
-  //   } else if (values.name.length > 10) {
-  //     errors.name = "name maxlength is 10";
-  //   }
-
-  //   if (!values.phone) {
-  //     errors.phone = "phone is required"
-  //   } else if (!phoneRegex.test(values.phone)) {
-  //     errors.phone = "phone number is invalid";
-  //   }
-
-  //   if (!values.email) {
-  //     errors.email = "email is required";
-  //   } else if (!emailRegex.test(values.email)) {
-  //     errors.email = "email number is invalid";
-  //   }
-  //   return errors;
-  // }
-  
   let phoneRegExp = /^(011|012|015)[0-9]{8}$/;
   let validateScheme = Yup.object({
     name: Yup.string()

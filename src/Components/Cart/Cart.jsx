@@ -2,15 +2,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { CartContext } from "../../Context/CartContext";
-// import { useQuery } from 'react-query';
 import { ThreeDots } from "react-loader-spinner";
 
 export default function Cart() {
   let { getLoggedUserCart, removeCartItem, updateProductQuantity } =
     useContext(CartContext);
   const [cartDetails, setCartDetails] = useState(null);
-
-  // let { isLoading } = useQuery('carts', getCart);
 
   async function updateCount(id, count) {
     let { data } = await updateProductQuantity(id, count);

@@ -5,7 +5,6 @@ import { ThreeDots } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import { toast } from "react-toastify";
-// import toast from 'react-hot-toast';
 
 export default function FeaturedProducts() {
   let { addToCart } = useContext(CartContext);
@@ -48,27 +47,6 @@ export default function FeaturedProducts() {
   }
 
   let { isLoading, data } = useQuery("featuredProducts", getsFeaturedProducts);
-  // isFetching  , isError
-  // cacheTime: 3000,
-  // refetchInterval: 5000,
-  // refetchOnMount:false,
-  // staleTime: 3000,
-  // enabled: true
-  // console.log("isLoading", isLoading);
-  // console.log("isFetching", isFetching);
-  // console.log("isError", isError);
-
-  // console.log(data?.data.data);
-
-  // const [products, setProducts] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-
-  // async function getFeaturedProducts() {
-  //   setIsLoading(false);
-  //   let { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/products');
-  //   setProducts(data.data);
-  //   setIsLoading(true);
-  // }
 
   useEffect(() => {
     getsFeaturedProducts();

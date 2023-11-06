@@ -3,7 +3,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { ThreeDots } from "react-loader-spinner";
 import { useQuery } from "react-query";
-// import SpecificCategory from '../SpecificCategory/SpecificCategory';
 
 export default function Categories() {
   function getCategories() {

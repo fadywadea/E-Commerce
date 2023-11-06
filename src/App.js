@@ -18,7 +18,6 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import CartContextProvider from "./Context/CartContext";
-// import { Toaster } from 'react-hot-toast';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -56,7 +55,6 @@ function App() {
       <CounterContextProvider>
         <RouterProvider router={routers}></RouterProvider>
       </CounterContextProvider>
-      {/* <Toaster /> */}
       <ToastContainer />
     </CartContextProvider>
   );
